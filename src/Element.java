@@ -7,19 +7,15 @@ import javax.swing.*;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
-public class Element {
-    private JPanel element = new JPanel();
+public class Element extends JPanel{
     private int x=0,y=0;
     public Element(){
-        element.setBackground(Color.LIGHT_GRAY);
-        element.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        //element.setSize(new Dimension(x,y));
-        //element.setLayout(null);
-        //element.setLocation(200,200);
-        element.setBounds(x,y,x+50,y+50);
+        setBackground(Color.LIGHT_GRAY);
+        setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        setSize(new Dimension(x,y));
+        setLayout(null);
+        setLocation(200,200);
+        setBounds(x,y,x+50,y+50);
     }
 
-    public JPanel getElement(){
-        return element;
-    }
 }
