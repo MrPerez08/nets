@@ -13,14 +13,12 @@ public final class Menu extends JPanel {
         this.dim = dim;
         this.canvas = canvas;
         setLayout(new FlowLayout());
-        setBackground(Color.LIGHT_GRAY); // Set background color
-        setPreferredSize(dim); // Optional: Only when using absolute positioning
-        setBorder(BorderFactory.createLineBorder(Color.BLACK)); // Add a border
+        setBackground(Color.LIGHT_GRAY);
+        setPreferredSize(dim);
+        setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
-
+        //Implement buttons here
         add(addElement.instance(),BorderLayout.NORTH);
-
-
     }
     public int width(){return dim.width;}
     public int height(){return dim.height;}
@@ -28,7 +26,7 @@ public final class Menu extends JPanel {
         if (instance == null) {instance = new Menu(dim,canvas);}
         return instance;
     }
-
+    //Implements ability to create an element to the Canvas
     public static final class addElement extends JButton{
         static addElement instance;
         private addElement(){
@@ -36,10 +34,11 @@ public final class Menu extends JPanel {
             setFont(new Font("Serif", Font.BOLD, 60));
             setFocusable(false);
             setForeground(Color.DARK_GRAY);
-            setBackground(Color.LIGHT_GRAY); // Set button background color
+            setBackground(Color.LIGHT_GRAY);
             setBorderPainted(false);
             setFocusPainted(false);
             setContentAreaFilled(false);
+            setDoubleBuffered(true);
 
             addMouseListener(new MouseAdapter() {
                 @Override

@@ -14,6 +14,8 @@ public class Canvas extends JPanel{;
         setPreferredSize(dim);
         setLayout(null);
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        setDoubleBuffered(true);
+        add(Menu.addElement.instance(),BorderLayout.NORTH);
     }
     public int width(){return dim.width;}
     public int height(){return dim.height;}
