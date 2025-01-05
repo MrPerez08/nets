@@ -12,12 +12,9 @@ public class Main {
         screen.setLayout(new BorderLayout());  // BorderLayout for anchoring to top-left
         screen.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-
         Canvas main = new Canvas(new Dimension(screenX-divider,screenY));
         screen.add(main,BorderLayout.CENTER);
-
         screen.add(Menu.menu(new Dimension(divider,screenY),main),BorderLayout.WEST);
-
 
         screen.pack();
         screen.setVisible(true);
