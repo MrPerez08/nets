@@ -2,7 +2,6 @@ html, body{
     height:100%;
     margin:0;
     padding:0;
-    background-color:grey;
 }
 
 #window{
@@ -15,11 +14,26 @@ html, body{
     flex:1;
     background-color:red;
     order:1;
-    
 }
 
 #item2{
-    flex:1;
+    width:30%;
     background-color:green;
+    order:2;
+    display:flex;
+    flex-direction:column;
+}
+
+
+
+#top1{
+    flex:1;
+    background-color:purple;
+    order:1;
+}
+
+#bottom1{
+    flex:1;
+    background-color:blue;
     order:2;
 }
