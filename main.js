@@ -12,5 +12,5 @@ app.whenReady().then(() => {
     },
   });
 
-  mainWindow.loadFile('index.html'); // Load your HTML file
+  mainWindow.loadFile('app/index.html'); // Load your HTML file
 });

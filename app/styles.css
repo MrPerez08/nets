@@ -16,12 +16,17 @@ html,body{
     flex:1;
     order:1;
 }
+#graph{
+    width:100%;
+}
 
 #menu{
     width:30%;
-    display:flex;
     order:2;
     background-color:darkslategray;
+    transition:width 0.3s ease;
+    display:flex;
+    flex-direction:column;
 }
 
 #node{
@@ -30,3 +35,7 @@ html,body{
     stroke-width: 2px;
 }
 
+circle {
+    pointer-events: all;
+    z-index: 10;
+}

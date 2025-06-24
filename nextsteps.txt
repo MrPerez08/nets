@@ -1,0 +1,2 @@
+congratulations, you finally got the stupid node onclick function working.
+Your next step is to make the node move idc how you do it in the future man.
