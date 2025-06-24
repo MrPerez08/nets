@@ -1,0 +1,23 @@
+{
+  "name": "real8ed",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/MrPerez08/real8ed#readme",
+  "bugs": {
+    "url": "https://github.com/MrPerez08/real8ed/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrPerez08/real8ed.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "electron": "^37.0.0"
+  }
+}
