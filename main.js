@@ -1,15 +1,16 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow } = require('electron');
 
-const createWindow = () => {
-  const win = new BrowserWindow({
-    width: 800,
-    height: 600
-  })
-
-  win.loadFile('index.html')
-}
+let mainWindow;
 
 app.whenReady().then(() => {
-  createWindow()
-})
+  mainWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      nodeIntegration: true, // Required for D3+Electron
+      contextIsolation: false, // Disable for simplicity (not recommended for production)
+    },
+  });
 
+  mainWindow.loadFile('index.html'); // Load your HTML file
+});

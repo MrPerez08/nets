@@ -1,0 +1,25 @@
+html, body{
+    height:100%;
+    margin:0;
+    padding:0;
+    background-color:grey;
+}
+
+#window{
+    display:flex;
+    flex-direction:row;
+    height:100%;
+}
+
+#item1{
+    flex:1;
+    background-color:red;
+    order:1;
+    
+}
+
+#item2{
+    flex:1;
+    background-color:green;
+    order:2;
+}
