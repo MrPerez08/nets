@@ -1,73 +1,51 @@
+let isMoved = false
+const item2 = document.getElementById('item2');
 
-function createResponsiveChart() {
-    // Clear previous SVG if it exists
-    d3.select("#main svg").remove();
+function openitem2(){
     
-    // Get container dimensions
-    const container = d3.select("#main");
-    const width = container.node().getBoundingClientRect().width;
-    const height = container.node().getBoundingClientRect().height || 400; // fallback
+    // Force a reflow to ensure CSS is applied before changing width
+    item2.offsetWidth;
     
-    // Create SVG
-    const svg = container.append("svg")
-        .attr("width", width)
-        .attr("height", height)
-        .style("pointer-events", "all");
-    
-    // Set up the simulation
-const simulation = d3.forceSimulation(data)
-    .force("charge", d3.forceManyBody().strength(-100))
-    .force("x", d3.forceX(width / 2))
-    .force("y", d3.forceY(height / 2));
+    if (isMoved) {
+        // item2 is currently open, so close it
+        item2.style.width = '0%';
+    } else {
+        // item2 is currently closed, so open it
+        item2.style.width = '30%';
+    }
+    isMoved = !isMoved;
 
-// Drag behavior
-const drag = d3.drag()
-    .on("start", dragStarted)
-    .on("drag", dragged)
-    .on("end", dragEnded);
+    if (!item2._transitionListenerAdded) {
+        item2.addEventListener('transitionend', function() {
+            window.dispatchEvent(new Event('resize'));
+        });
+        item2._transitionListenerAdded = true;
+    }
+}
+
+
+
+
+// Select the SVG container
+const svg = d3.select("#graph");
+
+// Sample data - array of objects with x, y coordinates
+const nodesData = [
+    { id: 1, x: 100, y: 100 },
+];
 
 // Create nodes
-const node = svg.append("g")
-    .selectAll("circle")
-    .data(data)
-    .enter().append("circle")
-    .attr("r", 10)
-    .call(drag);
-
-// Update positions on each tick
-simulation.on("tick", () => {
-    node.attr("cx", d => d.x)
-        .attr("cy", d => d.y);
-});
-
-// Drag functions
-function dragStarted(event, d) {
-    if (!event.active) simulation.alphaTarget(0.3).restart();
-    d.fx = d.x;
-    d.fy = d.y;
-}
-
-function dragged(event, d) {
-    d.fx = event.x;
-    d.fy = event.y;
-}
-
-function dragEnded(event, d) {
-    if (!event.active) simulation.alphaTarget(0);
-    d.fx = null;
-    d.fy = null;
-}
-
-
-
-
-
-}
-
-
-// Wait for DOM to be ready before initializing
-document.addEventListener("DOMContentLoaded", function() {
-    createResponsiveChart();
-    window.addEventListener("resize", createResponsiveChart);
-});
-
+svg.selectAll(".node")
+    .data(nodesData)
+    .enter()
+    .append("circle")
+    .attr("class", "node")
+    .attr("r", 20)  // radius
+    .attr("cx", d => d.x)  // center x
+    .attr("cy", d => d.y) // center y
+    .on("click", function(event, d) {
+        if (d.id === 1) {
+            alert("You clicked Node 1!");
+            openitem2()
+        }
+    });

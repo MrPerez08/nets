@@ -21,30 +21,12 @@ function createCircle(svg, width, height) {
         .on("click", function(event) {
             event.stopPropagation();
             openMenu();
-            shiftNode(this);
         })
         .append("title")
         .text("This is a single node");
         originalPos = [width/2, height/2];
 }
 
-function shiftNode(node) {
-    const menu = document.getElementById('menu');
-    const menuWidth = parseFloat(getComputedStyle(menu).width);
-    const mainWidth = parseFloat(getComputedStyle(document.getElementById('main')).width);
-    
-    if (isNodeShifted) {
-        // Return to original position
-        d3.select(node)
-            .style("transform", "translateX(0)");
-    } else {
-        // Calculate shift amount (30% of window width is the menu width)
-        const shiftAmount = -0.15 * mainWidth; // Adjust this value as needed
-        d3.select(node)
-            .style("transform", `translateX(${shiftAmount}px)`);
-    }
-    isNodeShifted = !isNodeShifted;
-}
 
 /*
 function createCircle(svg,width,height){
@@ -71,7 +53,7 @@ function createResponsiveChart() {
     // Get container dimensions
     const container = d3.select("#main");
     const width = container.node().getBoundingClientRect().width;
-    const height = container.node().getBoundingClientRect().height || 400;
+    const height = container.node().getBoundingClientRect().height;
     
     // Create SVG
     const svg = container.append("svg")
