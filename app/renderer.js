@@ -1,3 +1,16 @@
+window.onload = function() {
+    const splash = document.getElementById("splash-screen");
+    const mainPage = document.getElementById("mainwindow");
+
+    // Fade out splash after 3 seconds
+    setTimeout(() => {
+        splash.classList.add("fade-out");
+                
+        // Remove splash screen after fade completes
+        setTimeout(() => {splash.style.display = "none";}, 1000); // Matches CSS transition time (1s)
+    }, 3000); // Show splash for 3 seconds
+};
+
 
 // Select the SVG container
 const svg = d3.select("#graph");
