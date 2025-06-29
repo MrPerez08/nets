@@ -24,19 +24,21 @@ html,body{
 }
 
 #menu{
-    width:30%;
+    width:0;
     order:2;
     background-color:darkslategray;
     transition:width 0.3s ease;
     display:flex;
     flex-direction:column;
     flex-shrink: 0; /* Prevent menu from shrinking */
+    overflow: hidden;
 }
 
 #node{
     fill: #69b3a2;
     stroke: #fff;
     stroke-width: 2px;
+    
 }
 
 circle {
