@@ -11,7 +11,7 @@
     "url": "git+https://github.com/MrPerez08/real8ed.git"
   },
   "license": "ISC",
-  "author": "",
+  "author": "Aidan Perez",
   "type": "commonjs",
   "main": "main.js",
   "scripts": {

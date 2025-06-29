@@ -17,6 +17,7 @@ html,body{
     flex: 1 1 auto; /* This makes the main div grow and shrink as needed */
     order: 1;
     position: relative; /* Add this for proper dimension calculations */
+    background-color: beige;
 }
 #graph{
     width:100%;
