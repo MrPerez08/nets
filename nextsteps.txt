@@ -5,3 +5,8 @@ Add node physics (how to add simulation to renderer.js??)
 Make the transition from menu toggle more natural (when the menu is toggled, the node selected is centered, when closed it just eases a translation with the same distance as teh menu div as it moves away)
 Add ability to scroll
 Add a grid? to make it easier to see scrolling
+
+
+
+
+Delicious node animation math: https://www.desmos.com/calculator/2knrn17ad5
