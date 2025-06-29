@@ -44,8 +44,5 @@ svg.selectAll(".node")
     .attr("cx", d => d.x)  // center x
     .attr("cy", d => d.y) // center y
     .on("click", function(event, d) {
-        if (d.id === 1) {
-            alert("You clicked Node 1!");
-            openitem2()
-        }
+        if (d.id === 1) {openitem2()}
     });
