@@ -23,7 +23,7 @@ app.whenReady().then(() => {
     },
   });
 
-  mainWindow.loadFile('app/splash/splash.html'); // Load your HTML file
+  mainWindow.loadFile('app/index.html'); // Load your HTML file
 });
 /*
 setTimeout(function () {
