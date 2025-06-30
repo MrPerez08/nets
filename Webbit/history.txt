@@ -1,0 +1,4 @@
+This file that contains many Java scripts may seem very out of place in comparison to all of the HTML, CSS, and JS code everywhere else
+
+This "Webbit" folder was meant to be the 'original' application utilizing Java Swing UI mainly because I was more comfortable with it than using web elements.
+I also didnt know about Electron at the time and its ability to port web applications to the desktop which is really cool. 
