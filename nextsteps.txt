@@ -10,3 +10,16 @@ Add a grid? to make it easier to see scrolling
 
 
 Delicious node animation math: https://www.desmos.com/calculator/2knrn17ad5
+
+
+
+
+
+The menu container should be replicated for other nodes, there should just be a single menu with the data inside of it being the attributes to a node
+so "node" objects with an example instance being "Aidan Perez" with attributes:
+    First name
+    Last name
+    age
+    address
+    email
+    

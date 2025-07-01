@@ -1,33 +1,33 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
+const { spawn } = require('child_process');
+const path = require('path');
 
-let mainWindow;
+let flaskProcess;
 
-
-/*
-var splash = new BrowserWindow({
-     width: 500, 
-     height: 300, 
-     transparent: true, 
-     frame: false, 
-     alwaysOnTop: true 
-});
-*/
-
-app.whenReady().then(() => {
-  mainWindow = new BrowserWindow({
+function createWindow() {
+  const win = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
-      nodeIntegration: true, // Required for D3+Electron
-      /*preload: path.join(__dirname, 'app/splash/preload.js')*/
-    },
+      nodeIntegration: false,
+      contextIsolation: true,
+    }
   });
 
-  mainWindow.loadFile('app/index.html'); // Load your HTML file
-});
-/*
-setTimeout(function () {
-  splash.close();
-  mainWindow.show();
-}, 5000);
-*/
+  // Load the frontend (from Flask in dev, or static in production)
+  if (process.env.NODE_ENV === 'development') {
+    win.loadURL('http://localhost:5000');  // Flask server
+  } else {
+    win.loadFile(path.join(__dirname, '../frontend/index.html'));
+  }
+
+  // Start Flask backend
+  flaskProcess = spawn('python', ['../backend/server.py']);
+
+  // Kill Flask when Electron closes
+  win.on('closed', () => {
+    flaskProcess.kill();
+  });
+}
+
+app.whenReady().then(createWindow);
