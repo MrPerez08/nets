@@ -67,7 +67,7 @@ html,body{
     flex: 1 1 auto; /* This makes the main div grow and shrink as needed */
     order: 1;
     position: relative; /* Add this for proper dimension calculations */
-    background-color: beige;
+    background-color: #ffe9ba;
 }
 #graph{
     width:100%;
@@ -78,7 +78,7 @@ html,body{
 #menu{
     width:0;
     order:2;
-    background-color:darkslategray;
+    background-color:#c9b791;
     transition:width 0.5s ease;
     display:flex;
     flex-direction:column;

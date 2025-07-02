@@ -1,0 +1,23 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch Flask String</title>
+</head>
+<body>
+    <button id="fetchButton">Click to Fetch String</button>
+    <p id="displayText"></p>
+
+    <script>
+        document.getElementById('fetchButton').addEventListener('click', async () => {
+            try {
+                const response = await fetch('/get_string');
+                const data = await response.json();
+                document.getElementById('displayText').textContent = data.data;
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        });
+    </script>
+</body>
+</html>

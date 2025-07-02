@@ -23,3 +23,10 @@ so "node" objects with an example instance being "Aidan Perez" with attributes:
     address
     email
     
+
+
+
+
+Eventually I want to recreate this program using: 
+    Frontend: 
+    Backend: Rust + Actix Web  (NOT WEB ASSEMBLY BTW)
